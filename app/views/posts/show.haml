@@ -1,0 +1,16 @@
+%h1 Blogs
+
+%p Title: 
+=@post.title
+
+%p Body:
+=@post.body
+
+= form_for [@post, @comment] do |f|
+	=f.label :content
+	=f.text_area :content
+	=f.submit
+
+- @comments.each do |comment|
+	%p
+		= comment.content 
